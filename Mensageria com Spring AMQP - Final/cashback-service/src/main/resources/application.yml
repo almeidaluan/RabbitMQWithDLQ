@@ -1,0 +1,17 @@
+server:
+  port: 8081
+
+spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+    listener:
+      simple:
+        default-requeue-rejected: false #remove o loop infinito de reprocessamento quandod a falha
+#        retry: #para processar/reprocessar as mensagens da DLQ essa config precisa ser feita manual
+#          enabled: 'true'
+#          max-attempts: 3
+#          initial-interval: 5s
+#          multiplier: '2'
