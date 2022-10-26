@@ -41,7 +41,7 @@ public class RabbitMQConfig {
 
     @Bean
     public Binding binding() {
-        Queue queue = new Queue("orders.v1.order-created.generate-cashback");
+        Queue queue = queueCashback()
         FanoutExchange exchange = new FanoutExchange("orders.v1.order-created");
         return BindingBuilder.bind(queue).to(exchange);
     }
